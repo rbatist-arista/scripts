@@ -1,3 +1,13 @@
+## Usage
+#event-handler config_archive
+#   trigger on-startup-config
+#   action bash python /mnt/flash/remote_backup.py 172.16.1.1 sftp sftp ns-MGMT
+#   delay 1
+
+#dc1-leaf1(config)#more flash:remote_backup.log 
+#2025-08-13 07:28:14 DEBUG    Connected to 172.16.1.1.
+#2025-08-13 07:28:14 DEBUG    Uploading startup-config to /dc1-leaf1_20250813072813.cfg
+
 ## import modules
 import sys
 import os
