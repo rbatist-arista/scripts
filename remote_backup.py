@@ -1,7 +1,7 @@
 ## Usage
 #event-handler config_archive
 #   trigger on-startup-config
-#   action bash python /mnt/flash/remote_backup.py 172.16.1.1 sftp sftp ns-MGMT
+#   action bash python /mnt/flash/remote_backup.py 172.16.1.1 user password ns-MGMT
 #   delay 1
 
 #dc1-leaf1(config)#more flash:remote_backup.log 
