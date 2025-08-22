@@ -1,0 +1,36 @@
+
+
+## import modules
+import sys
+import os
+import pexpect
+import logging
+
+##Logging
+logger = logging.getLogger()
+logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', filename='./ssh_connect.log', encoding='utf-8', level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
+
+## get vars
+ConnectTimeout=1
+
+try:
+    get_addr = sys.argv[1]
+    get_user = sys.argv[2]
+    get_pass = sys.argv[3]
+    connect_command = "ssh -o ConnectTimeout=" + str(ConnectTimeout) + " " + get_user+ '@' +get_addr
+except Exception as e:
+    logger.debug(e)
+    print (e)    
+
+## run connector
+try:
+    print ("SSH_CONNECT: Connecting to remote device...")
+    child = pexpect.spawn(connect_command)
+    child.expect('(?i)password:')
+    child.sendline(get_pass)
+    logger.debug(child.before.decode("utf-8").split("\n"))
+    child.interact()
+    print ("SSH_CONNECT: remote connection closed")
+except Exception as e:
+    logger.debug(e)
+    print (e)
