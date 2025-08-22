@@ -1,3 +1,17 @@
+#### USAGE
+#
+# python3 ssh_connect.py 172.16.1.201 arista arista
+# SSH_CONNECT: Connecting to remote device...
+#  
+# Last login: Fri Aug 22 16:19:23 2025 from 172.16.1.1
+# ----------------------------  W A R N I N G  -----------------------------
+# -     Access to this system is restricted to authorized users only.      -
+# -     All data residing on this system is the property of ARISTA.  -
+# -     All activities on this system may be monitored.                    -
+# -     Unauthorized usage is prohibited and may attract penalties.        -
+# --------------------------------------------------------------------------
+# Device: dc2-leaf3
+# dc2-leaf3#
 
 
 ## import modules
